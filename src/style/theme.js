@@ -1,14 +1,14 @@
 const theme = {
   colors: {
     beige: "#FCFBF7",
-    red: "#FF4630",
-    grey: "#4F4F4F",
     black: "#000000",
+    darkGrey: "#4F4F4F",
+    grey: "#828282",
+    red: "#FF4630",
     white: "#FFFFFF",
-    darkGrey: "#828282",
   },
   breakpoints: {
-    sm: "576px",
+    sm: "425px",
     md: "768px",
     lg: "992px",
     xl: "1200px",

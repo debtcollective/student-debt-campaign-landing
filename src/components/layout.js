@@ -14,6 +14,7 @@ import { theme } from "../style"
 const GlobalStyle = createGlobalStyle`
   html,
   body {
+    margin: 0;
     height: 100%;
     width: 100%;
     -webkit-font-smoothing: antialiased;

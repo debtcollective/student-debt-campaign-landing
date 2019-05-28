@@ -13,27 +13,27 @@ const StyledLink = styled.a`
 const Title = styled.h1`
   color: ${theme.colors.black};
   font-family: "More Gothic Bold";
-  font-size: 5rem;
+  font-size: 7rem;
   text-align: center;
 
   @media (min-width: ${theme.breakpoints.sm}) {
-    font-size: 6rem;
-  }
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    font-size: 8rem;
-  }
-
-  @media (min-width: ${theme.breakpoints.lg}) {
     font-size: 10rem;
   }
 
+  @media (min-width: ${theme.breakpoints.md}) {
+    font-size: 14rem;
+  }
+
+  @media (min-width: ${theme.breakpoints.lg}) {
+    font-size: 18rem;
+  }
+
   @media (min-width: ${theme.breakpoints.xl}) {
-    font-size: 13rem;
+    font-size: 20rem;
   }
 
   @media (min-width: ${theme.breakpoints.xxl}) {
-    font-size: 16rem;
+    font-size: 24rem;
   }
 `
 
