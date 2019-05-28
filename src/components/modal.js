@@ -61,13 +61,14 @@ const Title = styled.h2`
 `
 
 const Input = styled.input`
-  color: ${theme.colors.black};
-  width: 100%;
-  height: 80px;
-  border: 1px solid ${theme.colors.darkGrey};
   border-radius: 4px;
+  border: 1px solid ${theme.colors.darkGrey};
+  color: ${theme.colors.black};
+  font-family: "Libre Franklin", sans-serif;
   font-size: 4rem;
+  height: 80px;
   padding: 1rem 2rem;
+  width: 100%;
 
   @media (max-width: ${theme.breakpoints.lg}) {
     font-size: 2.5rem;
@@ -80,13 +81,14 @@ const Button = styled.button`
   border-radius: 4px;
   border: none;
   color: ${theme.colors.white};
+  cursor: pointer;
+  font-family: "Libre Franklin", sans-serif;
   font-size: 2.6rem;
   font-weight: bold;
   height: 80px;
   margin-left: 25px;
   padding: 0 5rem;
   text-transform: uppercase;
-  cursor: pointer;
 
   &:hover {
     background-color: ${theme.colors.darkGrey};

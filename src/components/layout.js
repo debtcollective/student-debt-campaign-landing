@@ -14,11 +14,11 @@ import { theme } from "../style"
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
+    width: 100%;
   }
 
   html {
@@ -30,8 +30,8 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     background-color: ${theme.colors.beige};
     display: flex;
-    justify-content: center;
     font-size: 1.4rem;
+    justify-content: center;
   }
 
   *,
