@@ -22,7 +22,7 @@ class IndexPage extends Component {
     return (
       <>
         <Layout>
-          <SEO title="Student Debt Strike" />
+          <SEO title="Home" />
           <Message onLinkClick={this.showModal} />
           <Modal
             isOpen={this.state.showModal}
