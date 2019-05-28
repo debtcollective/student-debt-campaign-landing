@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   siteMetadata: {
     title: `Student Debt Strike`,
     description: `Student Debt Strike campaign page`,
@@ -21,3 +21,9 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+if (process.env.PATH_PREFIX) {
+  config.pathPrefix = process.env.PATH_PREFIX
+}
+
+module.exports = config
