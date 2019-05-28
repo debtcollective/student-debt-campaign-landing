@@ -1,8 +1,9 @@
-import React from "react"
+import React, { Component } from "react"
 import { createGlobalStyle } from "styled-components"
 
 import Layout from "../components/layout"
 import Message from "../components/message"
+import Modal from "../components/modal"
 import SEO from "../components/seo"
 import { theme } from "../style"
 
@@ -23,14 +24,34 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const IndexPage = () => (
-  <>
-    <GlobalStyle />
-    <Layout>
-      <SEO title="Home" />
-      <Message />
-    </Layout>
-  </>
-)
+class IndexPage extends Component {
+  state = {
+    showModal: false,
+  }
+
+  showModal = () => {
+    this.setState({ showModal: true })
+  }
+
+  hideModal = () => {
+    this.setState({ showModal: false })
+  }
+
+  render() {
+    return (
+      <>
+        <GlobalStyle />
+        <Layout>
+          <SEO title="Student Debt Strike" />
+          <Message onLinkClick={this.showModal} />
+          <Modal
+            isOpen={this.state.showModal}
+            onRequestClose={this.hideModal}
+          />
+        </Layout>
+      </>
+    )
+  }
+}
 
 export default IndexPage

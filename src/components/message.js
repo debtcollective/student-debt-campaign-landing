@@ -1,11 +1,13 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 import { theme } from "../style"
 
-const StyledLink = styled(props => <Link {...props} />)`
+const StyledLink = styled.a`
   color: ${theme.colors.red};
+  cursor: pointer;
+  text-decoration: underline;
 `
 
 const Title = styled.h1`
@@ -35,13 +37,18 @@ const Title = styled.h1`
   }
 `
 
-const Message = () => (
+const Message = ({ onLinkClick }) => (
   <Title>
     THE END OF
     <br />
     STUDENT DEBT
     <br />
-    IS <StyledLink>HERE</StyledLink>!
+    IS <StyledLink onClick={onLinkClick}>HERE</StyledLink>!
   </Title>
 )
+
+Message.propTypes = {
+  onLinkClick: PropTypes.func,
+}
+
 export default Message
