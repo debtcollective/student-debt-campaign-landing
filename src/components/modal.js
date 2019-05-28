@@ -79,7 +79,7 @@ const Input = styled.input`
 const Button = styled.button`
   background-color: ${theme.colors.darkGrey};
   border-radius: 4px;
-  border: none;
+  border: 0;
   color: ${theme.colors.white};
   cursor: pointer;
   font-family: "Libre Franklin", sans-serif;
@@ -107,14 +107,16 @@ const Button = styled.button`
 `
 
 const Close = styled.button`
-  color: white;
-  font-size: 12rem;
   background-color: transparent;
-  border-color: transparent;
+  border: 0;
+  color: white;
   cursor: pointer;
+  font-size: 12rem;
+  margin: 0;
+  padding: 0;
   position: absolute;
+  right: 1.8rem;
   top: 0;
-  right: 0;
 
   @media (max-width: ${theme.breakpoints.xl}) {
     font-size: 10rem;
