@@ -4,6 +4,9 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 import { theme } from "../style"
+import Form from "./Form"
+
+ReactModal.setAppElement("#___gatsby")
 
 const StyledReactModal = styled(props => <ReactModal {...props} />)`
   align-items: center;
@@ -24,16 +27,6 @@ const ModalBody = styled.div`
   justify-content: center;
   max-width: 1180px;
   padding: 2rem;
-`
-
-const Form = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-
-  @media (max-width: 550px) {
-    flex-direction: column;
-  }
 `
 
 const Title = styled.h2`
@@ -57,52 +50,6 @@ const Title = styled.h2`
 
   @media (max-width: 485px) {
     font-size: 7rem;
-  }
-`
-
-const Input = styled.input`
-  border-radius: 4px;
-  border: 1px solid ${theme.colors.darkGrey};
-  color: ${theme.colors.black};
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 4rem;
-  height: 80px;
-  padding: 1rem 2rem;
-  width: 100%;
-
-  @media (max-width: ${theme.breakpoints.lg}) {
-    font-size: 2.5rem;
-    height: 60px;
-  }
-`
-
-const Button = styled.button`
-  background-color: ${theme.colors.darkGrey};
-  border-radius: 4px;
-  border: 0;
-  color: ${theme.colors.white};
-  cursor: pointer;
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 2.6rem;
-  font-weight: bold;
-  height: 80px;
-  margin-left: 25px;
-  padding: 0 5rem;
-  text-transform: uppercase;
-
-  &:hover {
-    background-color: ${theme.colors.darkGrey};
-  }
-
-  @media (max-width: ${theme.breakpoints.lg}) {
-    font-size: 1.6rem;
-    height: 60px;
-  }
-
-  @media (max-width: 585px) {
-    margin-top: 1rem;
-    width: 100%;
-    margin-left: 0;
   }
 `
 
@@ -138,10 +85,7 @@ const Modal = ({ isOpen, onRequestClose }) => (
     </Close>
     <ModalBody>
       <Title>Stay Updated</Title>
-      <Form>
-        <Input type="email" placeholder="address@email.com" />
-        <Button>Join</Button>
-      </Form>
+      <Form />
     </ModalBody>
   </StyledReactModal>
 )
