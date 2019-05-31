@@ -26,6 +26,15 @@ const config = {
         endpoint: process.env.MAILCHIMP_ENDPOINT,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        head: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+      },
+    },
   ],
 }
 
