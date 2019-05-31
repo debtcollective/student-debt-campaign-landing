@@ -1,6 +1,10 @@
-module.exports = {
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const config = {
   siteMetadata: {
-    title: `Debt Collective`,
+    title: `Student Debt Strike`,
     description: `Student Debt Strike campaign page`,
     author: `@debtcollective`,
   },
@@ -15,21 +19,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-mailchimp",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        endpoint: process.env.MAILCHIMP_ENDPOINT,
       },
     },
-    `gatsby-plugin-styled-components`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
+
+if (process.env.PATH_PREFIX) {
+  config.pathPrefix = process.env.PATH_PREFIX
+}
+
+module.exports = config

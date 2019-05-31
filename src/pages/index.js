@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 
-import Layout from "../components/layout"
-import Message from "../components/message"
-import Modal from "../components/modal"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import Message from "../components/Message"
+import Modal from "../components/Modal"
+import SEO from "../components/SEO"
 
 class IndexPage extends Component {
   state = {
@@ -22,7 +22,7 @@ class IndexPage extends Component {
     return (
       <>
         <Layout>
-          <SEO title="Student Debt Strike" />
+          <SEO title="Home" />
           <Message onLinkClick={this.showModal} />
           <Modal
             isOpen={this.state.showModal}

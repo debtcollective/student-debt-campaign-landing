@@ -6,6 +6,7 @@ const theme = {
     grey: "#828282",
     red: "#FF4630",
     white: "#FFFFFF",
+    green: "#24BA9D",
   },
   breakpoints: {
     sm: "425px",

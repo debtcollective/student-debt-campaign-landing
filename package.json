@@ -1,13 +1,14 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "student-debt-campaign",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Student Debt Campaign landing page built with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "@debtcollective",
   "dependencies": {
     "babel-plugin-styled-components": "~1.10.0",
     "gatsby": "^2.7.3",
     "gatsby-image": "^2.1.1",
+    "gatsby-plugin-mailchimp": "~5.1.0",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -27,24 +28,26 @@
     "prettier": "^1.17.1"
   },
   "keywords": [
-    "gatsby"
+    "debtcollective",
+    "Debt Collective",
+    "Student Debt Campaign"
   ],
-  "license": "MIT",
+  "license": "BSD 3-Clause",
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
-    "dev": "yarn develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "build:github": "PATH_PREFIX=student-debt-campaign yarn build",
     "deploy": "gh-pages -d public",
+    "dev": "yarn develop",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "start": "npm run develop"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/debtcollective/student-debt-campaign"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/debtcollective/student-debt-campaign/issues"
   }
 }
