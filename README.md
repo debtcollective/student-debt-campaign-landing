@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/debtcollective/student-debt-campaign.svg?style=svg)](https://circleci.com/gh/debtcollective/student-debt-campaign)
+
 # Student debt campaign landing page
 
 Provisional landing page for the student debt campaign.

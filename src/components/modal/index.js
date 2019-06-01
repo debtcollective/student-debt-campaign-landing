@@ -3,8 +3,8 @@ import ReactModal from "react-modal"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import { theme } from "../style"
-import Form from "./Form"
+import { theme } from "../../style"
+import Form from "../form"
 
 ReactModal.setAppElement("#___gatsby")
 

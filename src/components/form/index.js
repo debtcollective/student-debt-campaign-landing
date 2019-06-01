@@ -2,23 +2,23 @@ import React, { Component } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import styled from "styled-components"
 
-import { theme } from "../style"
+import { theme } from "../../style"
 
 const StyledForm = styled.form`
   align-items: center;
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  @media (max-width: 550px) {
-    flex-direction: column;
-  }
 `
 
 const FormGroup = styled.div`
   align-items: flex-end;
   display: flex;
   width: 100%;
+
+  @media (max-width: 585px) {
+    flex-direction: column;
+  }
 `
 
 const Label = styled.label`
