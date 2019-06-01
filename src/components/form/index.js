@@ -9,16 +9,16 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  @media (max-width: 550px) {
-    flex-direction: column;
-  }
 `
 
 const FormGroup = styled.div`
   align-items: flex-end;
   display: flex;
   width: 100%;
+
+  @media (max-width: 585px) {
+    flex-direction: column;
+  }
 `
 
 const Label = styled.label`
