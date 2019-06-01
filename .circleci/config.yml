@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:10
-    working_directory: ~/repo
+    working_directory: ~/student-debt-campaign
     steps:
       - checkout
       - run: yarn install
@@ -13,17 +13,17 @@ jobs:
 
       # keep build output for deploy step
       - persist_to_workspace:
-          root: ~/repo
+          root: ~/student-debt-campaign
           paths:
             - public
 
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: ~/repo
+    working_directory: ~/student-debt-campaign
     steps:
       - attach_workspace:
-        at: ./
+          at: ~/student-debt-campaign
 
       - run: sudo pip install awscli
       - run: aws s3 sync public s3://strikestudentdebt.org --delete
