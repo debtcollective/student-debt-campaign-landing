@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import styled from "styled-components"
 
-import { theme } from "../style"
+import { theme } from "../../style"
 
 const StyledForm = styled.form`
   align-items: center;

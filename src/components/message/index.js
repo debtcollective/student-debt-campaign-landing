@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import { theme } from "../style"
+import { theme } from "../../style"
 
 const StyledLink = styled.a`
   color: ${theme.colors.red};
@@ -14,6 +14,7 @@ const Title = styled.h1`
   color: ${theme.colors.black};
   font-family: "More Gothic Bold";
   font-size: 7rem;
+  margin: 0;
   text-align: center;
 
   @media (min-width: ${theme.breakpoints.sm}) {

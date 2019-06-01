@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
-import { theme } from "../style"
+import { theme } from "../../style"
 
 const GlobalStyle = createGlobalStyle`
   html,
