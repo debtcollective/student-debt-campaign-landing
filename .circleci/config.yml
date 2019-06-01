@@ -1,17 +1,32 @@
 version: 2
 jobs:
-  # build job omitted for brevity
+  build: 
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: yarn install
+
+      # build
+      - run: yarn build
+      
+      # keep build output for deploy step
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - public
+
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: ~/circleci-docs
+    working_directory: ~/repo
     steps:
-      - run:
-          name: Install awscli
-          command: sudo pip install awscli
-      - run:
-          name: Deploy to S3
-          command: aws s3 sync public s3://circle-production-static-site/docs/ --delete
+      - attach_workspace:
+        at: ./
+
+      - run: sudo pip install awscli
+      - run: aws s3 sync public s3://student-debt-campaign --delete
 
 workflows:
   version: 2
