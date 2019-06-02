@@ -62,6 +62,11 @@ const Button = styled.button`
     background-color: ${theme.colors.darkGrey};
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+
   @media (max-width: ${theme.breakpoints.lg}) {
     font-size: 1.6rem;
     height: 60px;
@@ -89,6 +94,7 @@ class Form extends Component {
   state = {
     email: "",
     msg: "",
+    disabled: false,
   }
 
   handleSubmit = async event => {
@@ -100,12 +106,25 @@ class Form extends Component {
       return false
     }
 
-    const response = await addToMailchimp(email)
-    const { msg } = response
+    // disable submit button
+    this.setState({ disabled: true })
 
-    this.setState({
-      msg,
-    })
+    try {
+      const response = await addToMailchimp(email)
+      const { msg } = response
+
+      this.setState({
+        msg,
+      })
+    } catch (error) {
+      this.setState({
+        msg:
+          "There was an error while adding your email to our list, please reload and try again.",
+      })
+    }
+
+    // enable submit button
+    this.setState({ disabled: false })
   }
 
   handleChange = event => {
@@ -113,6 +132,8 @@ class Form extends Component {
   }
 
   render() {
+    const { disabled } = this.state
+
     return (
       <StyledForm onSubmit={this.handleSubmit} action="" method="post">
         <FormGroup>
@@ -123,6 +144,7 @@ class Form extends Component {
               placeholder="address@email.com"
               value={this.state.email}
               onChange={this.handleChange}
+              disabled={disabled}
             />
           </Label>
           <Button type="submit">Join</Button>
