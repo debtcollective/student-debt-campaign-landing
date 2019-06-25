@@ -33,10 +33,8 @@ const config = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
         head: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       },
     },
   ],
