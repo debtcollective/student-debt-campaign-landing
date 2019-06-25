@@ -5,8 +5,12 @@ require("dotenv").config({
 const config = {
   siteMetadata: {
     title: `Student Debt Strike`,
-    description: `Student Debt Strike campaign page`,
-    author: `@debtcollective`,
+    description: `Join the movement to end Student Debt. #CancelStudentDebt`,
+    author: "Debt Collective",
+    twitterUsername: `@0debtzone`,
+    facebookPage: "https://www.facebook.com/DebtCollective",
+    image: `${process.env.SITE_URL}/images/seo.png`,
+    url: process.env.SITE_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,10 +33,8 @@ const config = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
         head: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       },
     },
   ],
