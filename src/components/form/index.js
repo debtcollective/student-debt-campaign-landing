@@ -4,6 +4,8 @@ import styled from "styled-components"
 
 import { theme } from "../../style"
 
+const MAILCHIMP_GROUP_ID = process.env.MAILCHIMP_GROUP_ID
+
 const StyledForm = styled.form`
   align-items: center;
   display: flex;
@@ -109,8 +111,11 @@ class Form extends Component {
     // disable submit button
     this.setState({ disabled: true })
 
+    const mailchimpProps = {}
+    mailchimpProps[MAILCHIMP_GROUP_ID] = "1"
+
     try {
-      const response = await addToMailchimp(email)
+      const response = await addToMailchimp(email, mailchimpProps)
       const { msg } = response
 
       this.setState({
