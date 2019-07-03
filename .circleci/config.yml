@@ -8,8 +8,16 @@ jobs:
       - checkout
       - run: yarn install
 
+      # create .env.production
+      # needed by dotenv to work correctly
+      - run: touch .env.production
+      - run: echo "GOOGLE_ANALYTICS_TRACKING_ID=$GOOGLE_ANALYTICS_TRACKING_ID" >> .env.production
+      - run: echo "MAILCHIMP_ENDPOINT=$MAILCHIMP_ENDPOINT" >> .env.production
+      - run: echo "MAILCHIMP_GROUP_ID=$MAILCHIMP_GROUP_ID" >> .env.production
+      - run: echo "SITE_URL=$SITE_URL" >> .env.production
+
       # build
-      - run: yarn build
+      - run: NODE_ENV=production yarn build
 
       # keep build output for deploy step
       - persist_to_workspace:
